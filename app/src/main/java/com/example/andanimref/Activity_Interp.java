@@ -130,6 +130,7 @@ public class Activity_Interp extends Activity {
         intorp_btn_array.add(intorp_btn3);
 
         for (int i = 0; i < intorp_btn_array.size(); i++) {
+            //// 버튼 클릭
             final int finalI = i;
             intorp_btn_array.get(i).setOnClickListener(new View.OnClickListener() {
                 @Override
