@@ -100,7 +100,7 @@ public class Activity_Interp extends Activity {
                 //Enter key Action
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     hideKeyboard();
-                    clickAnimFunction();
+//                    clickAnimFunction();
                     return true;
                 }
                 return false;
@@ -112,7 +112,7 @@ public class Activity_Interp extends Activity {
                 //Enter key Action
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     hideKeyboard();
-                    clickAnimFunction();
+//                    clickAnimFunction();
                     return true;
                 }
                 return false;
