@@ -276,10 +276,10 @@ public class Activity_Interp extends Activity {
             mHandler.postDelayed(mRunnable, Duration);
             //// Size Animation
             if ( animCategory == "Size"){
-                boxview_dimmed.setAlpha(1);
+                boxview_dimmed.setImageAlpha(255);
                 boxview_dimmed.setX(boxview_xPos);
 
-                boxview_dimmed_origin.setAlpha(1);
+                boxview_dimmed_origin.setImageAlpha(255);
                 boxview_dimmed_origin.setX(boxview_origin_xPos);
 
                 AlphaAnim_Custom(boxview_dimmed, 1, 1, 0, factor );
@@ -319,11 +319,11 @@ public class Activity_Interp extends Activity {
 
             //// Positon Animation
             if ( animCategory == "Positon"){
-                boxview_dimmed.setAlpha(1);
+                boxview_dimmed.setImageAlpha(255);
                 boxview_dimmed.setScaleX(1);
                 boxview_dimmed.setScaleY(1);
 
-                boxview_dimmed_origin.setAlpha(1);
+                boxview_dimmed_origin.setImageAlpha(255);
                 boxview_dimmed_origin.setScaleX(1);
                 boxview_dimmed_origin.setScaleY(1);
 
@@ -332,6 +332,7 @@ public class Activity_Interp extends Activity {
 
                 AlphaAnim_Nor(boxview_dimmed_origin, 1, 1, 0 );
                 SclaeAnim_Nor(boxview_dimmed_origin, 1, 1, 1, 1, 0.5f, 0.5f, 0 );
+
                 if (boxview_dimmed.getX() == boxview_xPos){
                     TransAnim_Custom(boxview_dimmed, 0, -boxview_width, 0,0, Duration, factor);
                     TransAnim_Nor(boxview_dimmed_origin, 0, -boxview_origin_width, 0,0, Duration );
@@ -360,6 +361,7 @@ public class Activity_Interp extends Activity {
 
             //// Alpha Animation
             if ( animCategory == "Transparencies"){
+
                 boxview_dimmed.setX(boxview_xPos);
                 boxview_dimmed.setScaleX(1);
                 boxview_dimmed.setScaleY(1);
@@ -373,29 +375,30 @@ public class Activity_Interp extends Activity {
 
                 SclaeAnim_Nor(boxview_dimmed_origin, 1, 1, 1, 1, 0.5f, 0.5f, 0 );
                 TransAnim_Nor(boxview_dimmed_origin, 0, 0, 0,0, 0 );
-                if (boxview_dimmed.getAlpha() == 1){
+
+                if (boxview_dimmed.getImageAlpha() == 255){
                     AlphaAnim_Custom(boxview_dimmed, 1, 0, Duration, factor );
-                    AlphaAnim_Custom(boxview_dimmed_origin, 1, 0, Duration, 1.0 );
+                    AlphaAnim_Nor(boxview_dimmed_origin, 1, 0, Duration );
                     mRunnable = new Runnable() {
                         @Override
                         public void run() {
                             AlphaAnim_Custom(boxview_dimmed, 0, 0, 0, factor );
-                            boxview_dimmed.setAlpha(0);
+                            boxview_dimmed.setImageAlpha(0);
 
                             AlphaAnim_Nor(boxview_dimmed_origin, 0, 0, 0 );
-                            boxview_dimmed_origin.setAlpha(0);
+                            boxview_dimmed_origin.setImageAlpha(0);
                         }
                     };
                     mHandler = new Handler();
                     mHandler.postDelayed(mRunnable, Duration);
                 }
-                if (boxview_dimmed.getAlpha() == 0){
-                    boxview_dimmed.setAlpha(1);
+                if (boxview_dimmed.getImageAlpha() == 0){
+                    boxview_dimmed.setImageAlpha(255);
                     AlphaAnim_Custom(boxview_dimmed, 0, 1, Duration, factor );
                 }
 
-                if (boxview_dimmed_origin.getAlpha() == 0){
-                    boxview_dimmed_origin.setAlpha(1);
+                if (boxview_dimmed_origin.getImageAlpha() == 0){
+                    boxview_dimmed_origin.setImageAlpha(255);
                     AlphaAnim_Nor(boxview_dimmed_origin, 0, 1, Duration );
                 }
             }
