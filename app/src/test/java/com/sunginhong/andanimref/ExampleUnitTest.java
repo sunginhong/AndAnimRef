@@ -1,4 +1,4 @@
-package com.example.andanimref;
+package com.sunginhong.andanimref;
 
 import org.junit.Test;
 
